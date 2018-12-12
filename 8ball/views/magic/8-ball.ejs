@@ -1,0 +1,27 @@
+<!-- views/magic/8-ball.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>I tell the future!</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <style>
+      body {
+        <% if(message.tone === "positive") {%>
+          background-color: lightgreen;
+        <% } else if(message.tone === "negative") {%>
+          background-color: lightcoral;
+        <% } else { %>
+          background-color: lightblue;
+        <% } %>
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>The Magic 8-Ball</h1>
+    <p>Ask a question internally, and press the button below for your fortune.</p>
+    <h2><%= message.message %></h2>
+    <a href="/magic/8-ball"><button>Get your fortune</button></a>
+  </body>
+</html>
